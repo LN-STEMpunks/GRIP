@@ -1,0 +1,173 @@
+<grip:Pipeline>
+  <sources>
+    <grip:MultiImageFile>
+      <property name="path[21]" value="C:\Users\plane\Downloads\attachments\IMG_5829.JPG"/>
+      <property name="path[24]" value="C:\Users\plane\Downloads\attachments\IMG_5832.JPG"/>
+      <property name="path[27]" value="C:\Users\plane\Downloads\attachments\IMG_5835.JPG"/>
+      <property name="path[40]" value="C:\Users\plane\Downloads\attachments\IMG_5848.JPG"/>
+      <property name="path[0]" value="C:\Users\plane\Downloads\attachments\IMG_5808.JPG"/>
+      <property name="path[11]" value="C:\Users\plane\Downloads\attachments\IMG_5819.JPG"/>
+      <property name="path[3]" value="C:\Users\plane\Downloads\attachments\IMG_5811.JPG"/>
+      <property name="path[14]" value="C:\Users\plane\Downloads\attachments\IMG_5822.JPG"/>
+      <property name="path[6]" value="C:\Users\plane\Downloads\attachments\IMG_5814.JPG"/>
+      <property name="path[17]" value="C:\Users\plane\Downloads\attachments\IMG_5825.JPG"/>
+      <property name="path[9]" value="C:\Users\plane\Downloads\attachments\IMG_5817.JPG"/>
+      <property name="path[30]" value="C:\Users\plane\Downloads\attachments\IMG_5838.JPG"/>
+      <property name="path[33]" value="C:\Users\plane\Downloads\attachments\IMG_5841.JPG"/>
+      <property name="path[36]" value="C:\Users\plane\Downloads\attachments\IMG_5844.JPG"/>
+      <property name="path[39]" value="C:\Users\plane\Downloads\attachments\IMG_5847.JPG"/>
+      <property name="path[20]" value="C:\Users\plane\Downloads\attachments\IMG_5828.JPG"/>
+      <property name="path[23]" value="C:\Users\plane\Downloads\attachments\IMG_5831.JPG"/>
+      <property name="path[26]" value="C:\Users\plane\Downloads\attachments\IMG_5834.JPG"/>
+      <property name="path[29]" value="C:\Users\plane\Downloads\attachments\IMG_5837.JPG"/>
+      <property name="path[10]" value="C:\Users\plane\Downloads\attachments\IMG_5818.JPG"/>
+      <property name="path[2]" value="C:\Users\plane\Downloads\attachments\IMG_5810.JPG"/>
+      <property name="path[13]" value="C:\Users\plane\Downloads\attachments\IMG_5821.JPG"/>
+      <property name="path[5]" value="C:\Users\plane\Downloads\attachments\IMG_5813.JPG"/>
+      <property name="path[16]" value="C:\Users\plane\Downloads\attachments\IMG_5824.JPG"/>
+      <property name="path[8]" value="C:\Users\plane\Downloads\attachments\IMG_5816.JPG"/>
+      <property name="path[19]" value="C:\Users\plane\Downloads\attachments\IMG_5827.JPG"/>
+      <property name="path[32]" value="C:\Users\plane\Downloads\attachments\IMG_5840.JPG"/>
+      <property name="path[35]" value="C:\Users\plane\Downloads\attachments\IMG_5843.JPG"/>
+      <property name="path[38]" value="C:\Users\plane\Downloads\attachments\IMG_5846.JPG"/>
+      <property name="index" value="17"/>
+      <property name="path[22]" value="C:\Users\plane\Downloads\attachments\IMG_5830.JPG"/>
+      <property name="path[25]" value="C:\Users\plane\Downloads\attachments\IMG_5833.JPG"/>
+      <property name="path[28]" value="C:\Users\plane\Downloads\attachments\IMG_5836.JPG"/>
+      <property name="path[41]" value="C:\Users\plane\Downloads\attachments\IMG_5849.JPG"/>
+      <property name="path[1]" value="C:\Users\plane\Downloads\attachments\IMG_5809.JPG"/>
+      <property name="path[4]" value="C:\Users\plane\Downloads\attachments\IMG_5812.JPG"/>
+      <property name="path[12]" value="C:\Users\plane\Downloads\attachments\IMG_5820.JPG"/>
+      <property name="path[7]" value="C:\Users\plane\Downloads\attachments\IMG_5815.JPG"/>
+      <property name="path[15]" value="C:\Users\plane\Downloads\attachments\IMG_5823.JPG"/>
+      <property name="path[18]" value="C:\Users\plane\Downloads\attachments\IMG_5826.JPG"/>
+      <property name="numImages" value="42"/>
+      <property name="path[31]" value="C:\Users\plane\Downloads\attachments\IMG_5839.JPG"/>
+      <property name="path[34]" value="C:\Users\plane\Downloads\attachments\IMG_5842.JPG"/>
+      <property name="path[37]" value="C:\Users\plane\Downloads\attachments\IMG_5845.JPG"/>
+    </grip:MultiImageFile>
+  </sources>
+  <steps>
+    <grip:Step name="Blur">
+      <grip:Input step="0" socket="0"/>
+      <grip:Input step="0" socket="1">
+        <value>GAUSSIAN</value>
+      </grip:Input>
+      <grip:Input step="0" socket="2">
+        <value>6.3063063063063085</value>
+      </grip:Input>
+      <grip:Output step="0" socket="0" previewed="true"/>
+    </grip:Step>
+    <grip:Step name="HSV Threshold">
+      <grip:Input step="1" socket="0"/>
+      <grip:Input step="1" socket="1">
+        <value>
+          <double>169.9640287769784</double>
+          <double>180.0</double>
+        </value>
+      </grip:Input>
+      <grip:Input step="1" socket="2">
+        <value>
+          <double>61.915467625899275</double>
+          <double>255.0</double>
+        </value>
+      </grip:Input>
+      <grip:Input step="1" socket="3">
+        <value>
+          <double>0.0</double>
+          <double>255.0</double>
+        </value>
+      </grip:Input>
+      <grip:Output step="1" socket="0" previewed="false"/>
+    </grip:Step>
+    <grip:Step name="Find Contours">
+      <grip:Input step="2" socket="0"/>
+      <grip:Input step="2" socket="1">
+        <value>false</value>
+      </grip:Input>
+      <grip:Output step="2" socket="0" previewed="false"/>
+    </grip:Step>
+    <grip:Step name="Filter Contours">
+      <grip:Input step="3" socket="0"/>
+      <grip:Input step="3" socket="1">
+        <value>1000.0</value>
+      </grip:Input>
+      <grip:Input step="3" socket="2">
+        <value>200.0</value>
+      </grip:Input>
+      <grip:Input step="3" socket="3">
+        <value>30.0</value>
+      </grip:Input>
+      <grip:Input step="3" socket="4">
+        <value>1000.0</value>
+      </grip:Input>
+      <grip:Input step="3" socket="5">
+        <value>0</value>
+      </grip:Input>
+      <grip:Input step="3" socket="6">
+        <value>1000.0</value>
+      </grip:Input>
+      <grip:Input step="3" socket="7">
+        <value>
+          <int>0</int>
+          <int>100</int>
+        </value>
+      </grip:Input>
+      <grip:Output step="3" socket="0" previewed="true"/>
+    </grip:Step>
+    <grip:Step name="Publish ContoursReport">
+      <grip:Input step="4" socket="0"/>
+      <grip:Input step="4" socket="1">
+        <value>myContoursReport</value>
+      </grip:Input>
+      <grip:Input step="4" socket="2">
+        <value>true</value>
+      </grip:Input>
+      <grip:Input step="4" socket="3">
+        <value>true</value>
+      </grip:Input>
+      <grip:Input step="4" socket="4">
+        <value>true</value>
+      </grip:Input>
+      <grip:Input step="4" socket="5">
+        <value>true</value>
+      </grip:Input>
+      <grip:Input step="4" socket="6">
+        <value>true</value>
+      </grip:Input>
+      <grip:Input step="4" socket="7">
+        <value>true</value>
+      </grip:Input>
+    </grip:Step>
+  </steps>
+  <connections>
+    <grip:Connection>
+      <grip:Output step="0" socket="0" previewed="true"/>
+      <grip:Input step="1" socket="0"/>
+    </grip:Connection>
+    <grip:Connection>
+      <grip:Output step="2" socket="0" previewed="false"/>
+      <grip:Input step="3" socket="0"/>
+    </grip:Connection>
+    <grip:Connection>
+      <grip:Output step="1" socket="0" previewed="false"/>
+      <grip:Input step="2" socket="0"/>
+    </grip:Connection>
+    <grip:Connection>
+      <grip:Output step="3" socket="0" previewed="true"/>
+      <grip:Input step="4" socket="0"/>
+    </grip:Connection>
+    <grip:Connection>
+      <grip:Output source="0" socket="0" previewed="false"/>
+      <grip:Input step="0" socket="0"/>
+    </grip:Connection>
+  </connections>
+  <settings>
+    <teamNumber>0</teamNumber>
+    <publishAddress>roborio-0-frc.local</publishAddress>
+    <deployAddress>roborio-0-frc.local</deployAddress>
+    <deployDir>/home/lvuser</deployDir>
+    <deployUser>lvuser</deployUser>
+    <deployJavaHome>/usr/local/frc/JRE/</deployJavaHome>
+  </settings>
+</grip:Pipeline>
